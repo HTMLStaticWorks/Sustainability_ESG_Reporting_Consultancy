@@ -1,0 +1,129 @@
+/* ==========================================================================
+   VERDANT ESG - DARK THEME TOKENS & OVERRIDES
+   Carbon Graphite, Deep Slate & Phosphor Bio-Green
+   ========================================================================== */
+
+[data-theme="dark"] {
+  --color-bg: #0A110E;
+  --color-surface: #111A16;
+  --color-surface-elevated: #16221D;
+  --color-surface-glass: rgba(17, 26, 22, 0.88);
+  --color-surface-subtle: #141F1A;
+
+  --color-primary: #34D399;          /* High contrast bright emerald */
+  --color-primary-light: #10B981;
+  --color-primary-glow: #6EE7B7;
+  --color-secondary: #0A0F14;
+  --color-secondary-light: #151F28;
+
+  --color-text: #F1F5F3;
+  --color-text-muted: #9BB0A6;
+  --color-text-subtle: #6B8076;
+  --color-text-inverse: #0A110E;
+
+  --color-border: #1E2D27;
+  --color-border-hover: #2D423A;
+  --color-border-focus: #34D399;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.6);
+  --shadow-tilt: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+
+  color-scheme: dark;
+}
+
+[data-theme="dark"] .site-header {
+  background-color: rgba(10, 17, 14, 0.92);
+  border-bottom-color: var(--color-border);
+}
+
+[data-theme="dark"] .site-header.scrolled {
+  background-color: rgba(17, 26, 22, 0.96);
+}
+
+[data-theme="dark"] .esg-card {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .card-icon {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(52, 211, 153, 0.25) 100%);
+  color: #34D399;
+}
+
+[data-theme="dark"] .tilt-card:hover {
+  border-color: rgba(52, 211, 153, 0.5);
+}
+
+[data-theme="dark"] .card-glare {
+  background: radial-gradient(circle 300px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.12), transparent 80%);
+}
+
+[data-theme="dark"] .trust-bar {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .trust-ticker {
+  background-color: var(--color-surface-subtle);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .logo-item {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .form-control {
+  background-color: var(--color-surface-subtle);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .form-control:focus {
+  border-color: var(--color-primary-glow);
+  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.2);
+}
+
+[data-theme="dark"] .step-num {
+  background-color: var(--color-surface);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .timeline-step:hover .step-num {
+  background-color: var(--color-primary);
+  color: #0A110E;
+}
+
+[data-theme="dark"] .hero-home-1 {
+  background: radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 60%),
+              radial-gradient(circle at 10% 80%, rgba(217, 119, 6, 0.1) 0%, transparent 50%),
+              var(--color-bg);
+}
+
+[data-theme="dark"] .hero-stats-badge {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .skeleton {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 25%, rgba(255, 255, 255, 0.08) 37%, rgba(255, 255, 255, 0.04) 63%);
+  background-size: 400% 100%;
+}
+
+[data-theme="dark"] .dropdown-menu {
+  background-color: var(--color-surface-elevated);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .dropdown-item.active,
+[data-theme="dark"] .dropdown-item:hover {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #34D399;
+}
+
+[data-theme="dark"] .brand-text-main {
+  fill: #FFFFFF;
+}

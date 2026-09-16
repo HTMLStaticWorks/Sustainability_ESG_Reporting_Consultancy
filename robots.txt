@@ -1,0 +1,6 @@
+# Production robots.txt for Verdant ESG Consultancy
+User-agent: *
+Allow: /
+Disallow: /dashboard.html
+
+Sitemap: https://verdantesg.com/sitemap.xml

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verdant ESG — Compliance Intelligence &amp; ESG Score Simulator</title>
+  <meta name="description" content="Simulate your corporate ESG compliance score, evaluate non-compliance financial risks, and explore our interactive CSRD &amp; GRI framework roadmap.">
+  <meta name="keywords" content="ESG score dial, CSRD risk, sustainability compliance, ESG simulator, corporate non-compliance cost">
+  
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       NAVBAR (STRICT: MAX 4-5 LINKS + LOGIN + DASHBOARD CTA)
+       ======================================================================== -->
+  <header class="site-header" id="mainHeader">
+    <div class="container navbar">
+      <a href="index.html" class="navbar-brand" aria-label="Verdant ESG Home">
+        <svg viewBox="0 0 280 64" width="180" height="42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="hdrGlobeGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#064E3B"/>
+              <stop offset="100%" stop-color="#022C22"/>
+            </linearGradient>
+            <linearGradient id="hdrLeaf1" x1="12" y1="8" x2="32" y2="36" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#34D399"/>
+              <stop offset="50%" stop-color="#10B981"/>
+              <stop offset="100%" stop-color="#059669"/>
+            </linearGradient>
+            <linearGradient id="hdrLeaf2" x1="22" y1="8" x2="22" y2="36" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#6EE7B7"/>
+              <stop offset="100%" stop-color="#047857"/>
+            </linearGradient>
+            <linearGradient id="hdrOrbitGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#10B981"/>
+              <stop offset="50%" stop-color="#06B6D4"/>
+              <stop offset="100%" stop-color="#F59E0B"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(10, 10)">
+            <circle cx="22" cy="22" r="21" stroke="url(#hdrOrbitGrad)" stroke-width="1.5" stroke-dasharray="4 2 1 2" opacity="0.9"/>
+            <ellipse cx="22" cy="22" rx="21" ry="8" stroke="#10B981" stroke-width="1" stroke-dasharray="2 3" transform="rotate(-25 22 22)" opacity="0.6"/>
+            <circle cx="22" cy="22" r="18" fill="url(#hdrGlobeGrad)" stroke="#10B981" stroke-width="1"/>
+            <path d="M 4 22 A 18 7 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+            <path d="M 4 22 A 18 14 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.3"/>
+            <path d="M 22 4 A 7 18 0 0 0 22 40" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+            <path d="M 22 9 C 14 15 13 25 22 34 C 20 28 20 18 22 9 Z" fill="url(#hdrLeaf1)"/>
+            <path d="M 22 9 C 30 15 31 25 22 34 C 24 28 24 18 22 9 Z" fill="url(#hdrLeaf2)"/>
+            <path d="M 22 10 V 33" stroke="#ECFDF5" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="39" cy="14" r="2.5" fill="#F59E0B"/>
+            <circle cx="39" cy="14" r="1" fill="#FFFFFF"/>
+            <circle cx="5" cy="30" r="1.8" fill="#06B6D4"/>
+            <circle cx="22" cy="4" r="1.5" fill="#10B981"/>
+          </g>
+          <text x="65" y="30" font-family="'Outfit', 'Inter', sans-serif" font-size="20" font-weight="800" fill="currentColor" letter-spacing="0.02em" class="brand-text-main">VERDANT<tspan fill="#10B981">ESG</tspan></text>
+          <text x="66" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" fill="#64748B" letter-spacing="0.18em">SUSTAINABILITY &amp; AUDIT</text>
+        </svg>
+      </a>
+
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <div class="nav-dropdown">
+          <a href="home-2.html" class="nav-link active dropdown-trigger">
+            Home
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">Home 1</a>
+            <a href="home-2.html" class="dropdown-item active">Home 2</a>
+          </div>
+        </div>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="case-studies.html" class="nav-link">Case Studies</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="utility-btn js-theme-toggle" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <button class="utility-btn js-rtl-toggle" aria-label="Toggle RTL" style="font-weight: 800; font-size: 0.75rem;">
+          LTR
+        </button>
+
+        <a href="login.html" class="btn btn-login">Login</a>
+        <a href="dashboard.html" class="btn btn-dashboard">Dashboard</a>
+
+        <button class="hamburger-btn" aria-label="Open Mobile Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-backdrop">
+    <div class="mobile-drawer">
+      <div class="mobile-drawer-header">
+        <span style="font-family: var(--font-display); font-weight: 800; color: var(--color-primary);">VERDANT ESG</span>
+        <button class="utility-btn js-drawer-close" aria-label="Close Menu">✕</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home (Version 1)</a>
+        <a href="home-2.html" class="mobile-nav-link">Home (Version 2)</a>
+        <a href="services.html" class="mobile-nav-link">Services</a>
+        <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
+        <a href="about.html" class="mobile-nav-link">About Us</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
+      <div class="mobile-drawer-footer">
+        <a href="login.html" class="btn btn-outline" style="width: 100%;">Client Login</a>
+        <a href="dashboard.html" class="btn btn-primary" style="width: 100%;">Client Dashboard</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ========================================================================
+         HOME 2 SECTION 1: SPLIT-SCREEN HERO WITH ANIMATED ESG SCORE GAUGE/DIAL
+         ======================================================================== -->
+    <section class="hero-home-2">
+      <div class="container">
+        <div class="hero-split-grid">
+          <!-- Left Column: Risk & Action Narrative -->
+          <div>
+            <div class="badge">
+              <span class="badge-dot"></span>
+              Interactive Compliance Simulator
+            </div>
+            <h1>
+              Quantify Your Exposure. <span class="text-gradient">Simulate Your ESG Score.</span>
+            </h1>
+            <p class="lead-text">
+              Under strict CSRD and SEC disclosure mandates, unverified sustainability metrics lead to capital penalties and institutional divestment. Test your compliance baseline instantly.
+            </p>
+            <div class="btn-group">
+              <a href="contact.html" class="btn btn-primary btn-lg">
+                Run Diagnostic Audit
+                <span class="icon-arrow-right">→</span>
+              </a>
+              <a href="#cost-of-risk" class="btn btn-outline btn-lg">
+                View Risk Exposure
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive ESG Score Dial/Gauge -->
+          <div>
+            <div class="gauge-card">
+              <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: var(--color-primary-light); margin-bottom: 16px;">
+                Verified ESG Rating Engine
+              </div>
+
+              <div class="dial-wrapper">
+                <svg width="240" height="240" viewBox="0 0 240 240">
+                  <!-- Background Track Circle -->
+                  <circle cx="120" cy="120" r="88" stroke="var(--color-border)" stroke-width="14" fill="none"/>
+                  <!-- Interactive Progress Arc -->
+                  <circle id="gaugeCircle" cx="120" cy="120" r="88" stroke="#10B981" stroke-width="14" fill="none"
+                          stroke-linecap="round" transform="rotate(-90 120 120)" style="transition: stroke-dashoffset 0.3s ease, stroke 0.3s ease;"/>
+                </svg>
+
+                <div class="dial-center">
+                  <div class="dial-score" id="gaugeScoreVal">86</div>
+                  <div class="dial-tier" id="gaugeTierVal">AAA Prime</div>
+                </div>
+              </div>
+
+              <!-- Interactive Simulator Slider -->
+              <div class="gauge-slider-box">
+                <label for="esgScoreSlider">
+                  <span>Simulate Governance &amp; Decarbonization Level:</span>
+                  <span id="sliderValDisplay">Drag to adjust</span>
+                </label>
+                <input type="range" id="esgScoreSlider" class="esg-slider" min="40" max="98" value="86">
+              </div>
+
+              <p id="gaugeComment" style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 14px; margin-bottom: 0;">
+                Top Decile ESG Performance. Audit-ready compliance for EU CSRD &amp; SEC.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         HOME 2 SECTION 2: THE COST OF NON-COMPLIANCE (RISK-FRAMED SECTION)
+         ======================================================================== -->
+    <section class="section section-subtle" id="cost-of-risk">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge" style="background-color: rgba(220, 38, 38, 0.12); color: #DC2626; border-color: rgba(220, 38, 38, 0.25);">
+            Financial &amp; Legal Threat
+          </div>
+          <h2>The Severe Cost of Sustainability Inaction</h2>
+          <p class="lead-text" style="margin-left: auto; margin-right: auto;">
+            Failing to establish audit-grade ESG accounting directly impacts enterprise valuation, borrowing spreads, and statutory license to operate.
+          </p>
+        </div>
+
+        <div class="card-grid card-grid-3">
+          <!-- Risk 1 -->
+          <div class="esg-card tilt-card" style="border-top: 4px solid #EF4444;">
+            <div class="card-icon" style="color: #EF4444; background: rgba(239, 68, 68, 0.1);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+            </div>
+            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: #EF4444; margin-bottom: 8px;">
+              Up to 5% Turnover
+            </div>
+            <h3>Statutory Direct Fines</h3>
+            <p>
+              EU regulatory frameworks empower national enforcement agencies to levy fines up to 5% of global annual turnover for failure to disclose audited CSRD reports.
+            </p>
+            <span style="font-size: 0.8rem; font-weight: 700; color: #DC2626;">CSRD Enforcement Phase II Active</span>
+          </div>
+
+          <!-- Risk 2 -->
+          <div class="esg-card tilt-card" style="border-top: 4px solid #F59E0B;">
+            <div class="card-icon" style="color: #F59E0B; background: rgba(245, 158, 11, 0.1);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: #F59E0B; margin-bottom: 8px;">
+              +85 bps
+            </div>
+            <h3>Elevated Cost of Capital</h3>
+            <p>
+              Commercial lenders and green bond syndicates penalize lower-quartile ESG ratings with interest premiums averaging 85 basis points on syndicated credit facilities.
+            </p>
+            <span style="font-size: 0.8rem; font-weight: 700; color: #D97706;">Bloomberg ESG Debt Analysis</span>
+          </div>
+
+          <!-- Risk 3 -->
+          <div class="esg-card tilt-card" style="border-top: 4px solid #3B82F6;">
+            <div class="card-icon" style="color: #3B82F6; background: rgba(59, 130, 246, 0.1);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+              </svg>
+            </div>
+            <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: #3B82F6; margin-bottom: 8px;">
+              Tier-1 Delisting
+            </div>
+            <h3>Supply-Chain Exclusion</h3>
+            <p>
+              Global procurement giants now de-list Tier-1 and Tier-2 vendors unable to produce third-party verified Scope 1–3 emissions data within 60 calendar days.
+            </p>
+            <span style="font-size: 0.8rem; font-weight: 700; color: #2563EB;">Scope 3 Mandatory Clause</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         HOME 2 SECTION 3: FRAMEWORK EXPLAINER (INTERACTIVE STEPPER / DIAGRAM)
+         ======================================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Statutory Harmonization</div>
+          <h2>Demystifying the Global ESG Framework Maze</h2>
+          <p class="lead-text" style="margin-left: auto; margin-right: auto;">
+            We harmonize complex international reporting architectures into a singular, unified data collection pipeline.
+          </p>
+        </div>
+
+        <div class="framework-stepper">
+          <!-- Stepper Tab Buttons -->
+          <div class="framework-nav" role="tablist">
+            <button class="framework-tab-btn active js-framework-btn" data-framework="csrd" role="tab">
+              <span>01. EU CSRD &amp; ESRS</span>
+              <span class="icon-arrow-right">→</span>
+            </button>
+            <button class="framework-tab-btn js-framework-btn" data-framework="gri" role="tab">
+              <span>02. GRI Universal Standards</span>
+              <span class="icon-arrow-right">→</span>
+            </button>
+            <button class="framework-tab-btn js-framework-btn" data-framework="ghg" role="tab">
+              <span>03. GHG Protocol Corporate Standard</span>
+              <span class="icon-arrow-right">→</span>
+            </button>
+            <button class="framework-tab-btn js-framework-btn" data-framework="tcfd" role="tab">
+              <span>04. ISSB &amp; TCFD Climate Disclosures</span>
+              <span class="icon-arrow-right">→</span>
+            </button>
+          </div>
+
+          <!-- Stepper Detail Panels -->
+          <div class="framework-content">
+            <!-- Panel 1: CSRD -->
+            <div class="framework-detail-panel active js-framework-panel" id="panel-csrd" role="tabpanel">
+              <div class="badge">Mandatory EU Directive</div>
+              <h3>Corporate Sustainability Reporting Directive (CSRD)</h3>
+              <p>
+                The CSRD requires over 50,000 companies operating in Europe to produce verifiable disclosures across 12 European Sustainability Reporting Standards (ESRS). It mandates formal <strong>double materiality</strong> — evaluating both environmental impact on society and climate risks to corporate value.
+              </p>
+              <div style="background: var(--color-surface); padding: 16px; border-radius: 8px; border: 1px solid var(--color-border); margin-top: 16px;">
+                <strong style="color: var(--color-primary);">Verdant Assurance Deliverables:</strong>
+                <ul style="margin-top: 8px; list-style: disc; padding-left: 20px; font-size: 0.9rem; color: var(--color-text-muted);">
+                  <li>Double Materiality Matrix &amp; Stakeholder Survey</li>
+                  <li>ESRS E1–E5 Environmental Topic Mapping</li>
+                  <li>Limited to Reasonable Assurance Audit Certification</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Panel 2: GRI -->
+            <div class="framework-detail-panel js-framework-panel" id="panel-gri" role="tabpanel">
+              <div class="badge">Global Benchmark</div>
+              <h3>Global Reporting Initiative (GRI)</h3>
+              <p>
+                GRI represents the world's most widely adopted public sustainability reporting framework. It emphasizes multi-stakeholder impact accountability, detailing how organizational operations influence economic, environmental, and human rights factors globally.
+              </p>
+              <div style="background: var(--color-surface); padding: 16px; border-radius: 8px; border: 1px solid var(--color-border); margin-top: 16px;">
+                <strong style="color: var(--color-primary);">Verdant Assurance Deliverables:</strong>
+                <ul style="margin-top: 8px; list-style: disc; padding-left: 20px; font-size: 0.9rem; color: var(--color-text-muted);">
+                  <li>GRI Content Index &amp; Disclosures Alignment</li>
+                  <li>Human Rights Due Diligence (GRI 2)</li>
+                  <li>Sector-Specific Standards Verification</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Panel 3: GHG -->
+            <div class="framework-detail-panel js-framework-panel" id="panel-ghg" role="tabpanel">
+              <div class="badge">Carbon Accounting Engine</div>
+              <h3>Greenhouse Gas Protocol (Scope 1, 2, 3)</h3>
+              <p>
+                The GHG Protocol establishes comprehensive global standardized frameworks to measure and manage greenhouse gas emissions from private and public sector operations, value chains, and mitigation actions.
+              </p>
+              <div style="background: var(--color-surface); padding: 16px; border-radius: 8px; border: 1px solid var(--color-border); margin-top: 16px;">
+                <strong style="color: var(--color-primary);">Verdant Assurance Deliverables:</strong>
+                <ul style="margin-top: 8px; list-style: disc; padding-left: 20px; font-size: 0.9rem; color: var(--color-text-muted);">
+                  <li>Scope 1 Direct Combustion &amp; Fleet Inventory</li>
+                  <li>Scope 2 Market-Based vs Location-Based Power Verification</li>
+                  <li>Scope 3 Upstream &amp; Downstream Value Chain Modeling</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Panel 4: TCFD -->
+            <div class="framework-detail-panel js-framework-panel" id="panel-tcfd" role="tabpanel">
+              <div class="badge">Capital Markets Framework</div>
+              <h3>ISSB S1 &amp; S2 (Incorporating TCFD)</h3>
+              <p>
+                Governed by the International Sustainability Standards Board (ISSB), these standards establish a comprehensive global baseline of sustainability-related financial disclosures for investors and capital markets.
+              </p>
+              <div style="background: var(--color-surface); padding: 16px; border-radius: 8px; border: 1px solid var(--color-border); margin-top: 16px;">
+                <strong style="color: var(--color-primary);">Verdant Assurance Deliverables:</strong>
+                <ul style="margin-top: 8px; list-style: disc; padding-left: 20px; font-size: 0.9rem; color: var(--color-text-muted);">
+                  <li>2°C &amp; 1.5°C Climate Scenario Analysis</li>
+                  <li>Physical vs Transition Financial Risk Quantification</li>
+                  <li>Executive Board Governance &amp; Oversight Disclosures</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         HOME 2 SECTION 4: INDUSTRIES WE SERVE (SEGMENTED TABS)
+         ======================================================================== -->
+    <section class="section section-subtle">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Sector Specialization</div>
+          <h2>Tailored Compliance for High-Impact Industries</h2>
+          <p class="lead-text" style="margin-left: auto; margin-right: auto;">
+            Every sector possesses distinct materiality boundaries and emission profiles. Explore how our audits adapt to your operational reality.
+          </p>
+        </div>
+
+        <div class="card-grid card-grid-4">
+          <!-- Industry 1: Manufacturing -->
+          <div class="esg-card tilt-card" style="padding-top: 0; overflow: hidden;">
+            <div style="width: calc(100% + 48px); height: 160px; margin: 0 -24px 20px -24px; overflow: hidden;">
+              <img src="assets/images/case_manufacturing.jpg" alt="Manufacturing & Heavy Industry" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="card-icon" style="margin-top: -36px; border: 3px solid var(--color-surface); box-shadow: var(--shadow-md);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 20h20M5 20V8l7 4V4l7 4v12"></path>
+              </svg>
+            </div>
+            <h3>Manufacturing &amp; Heavy Industry</h3>
+            <p>Scope 1 direct process emissions, industrial heat optimization, circular materials tracking, and CBAM cross-border adjustments.</p>
+            <a href="case-studies.html" class="btn btn-outline btn-sm">Read Case Study</a>
+          </div>
+
+          <!-- Industry 2: Financial Institutions -->
+          <div class="esg-card tilt-card" style="padding-top: 0; overflow: hidden;">
+            <div style="width: calc(100% + 48px); height: 160px; margin: 0 -24px 20px -24px; overflow: hidden;">
+              <img src="assets/images/case_finance.jpg" alt="Financial Institutions" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="card-icon" style="margin-top: -36px; border: 3px solid var(--color-surface); box-shadow: var(--shadow-md);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 2l9 8H3z"></path>
+              </svg>
+            </div>
+            <h3>Private Equity &amp; Banking</h3>
+            <p>SFDR Article 8 &amp; 9 fund classification, portfolio Scope 3 financed emissions accounting, and PCAF standard verification.</p>
+            <a href="case-studies.html" class="btn btn-outline btn-sm">Read Case Study</a>
+          </div>
+
+          <!-- Industry 3: Energy & Utilities -->
+          <div class="esg-card tilt-card" style="padding-top: 0; overflow: hidden;">
+            <div style="width: calc(100% + 48px); height: 160px; margin: 0 -24px 20px -24px; overflow: hidden;">
+              <img src="assets/images/case_energy.jpg" alt="Clean Energy & Utilities" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="card-icon" style="margin-top: -36px; border: 3px solid var(--color-surface); box-shadow: var(--shadow-md);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3>Renewable &amp; Grid Energy</h3>
+            <p>Power Purchase Agreement (PPA) emissions offsetting, lifecycle grid asset assessments, and SBTi net-zero roadmap validation.</p>
+            <a href="case-studies.html" class="btn btn-outline btn-sm">Read Case Study</a>
+          </div>
+
+          <!-- Industry 4: Retail & Consumer Goods -->
+          <div class="esg-card tilt-card" style="padding-top: 0; overflow: hidden;">
+            <div style="width: calc(100% + 48px); height: 160px; margin: 0 -24px 20px -24px; overflow: hidden;">
+              <img src="assets/images/case_retail.jpg" alt="Retail & Global Supply Chains" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="card-icon" style="margin-top: -36px; border: 3px solid var(--color-surface); box-shadow: var(--shadow-md);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+            </div>
+            <h3>Retail &amp; Global Supply Chains</h3>
+            <p>Tier-1 to Tier-4 supplier auditing, deforestation-free procurement verification (EUDR), and packaging circularity indices.</p>
+            <a href="case-studies.html" class="btn btn-outline btn-sm">Read Case Study</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         HOME 2 SECTION 5: BY THE NUMBERS (ANIMATED DEDICATED STATS SECTION)
+         ======================================================================== -->
+    <section class="stats-strip">
+      <div class="container">
+        <div class="stats-grid">
+          <!-- Stat 1 -->
+          <div class="stat-item">
+            <h3 data-counter="480" data-suffix="+">480+</h3>
+            <p>Corporate Audits Delivered</p>
+          </div>
+
+          <!-- Stat 2 -->
+          <div class="stat-item">
+            <h3 data-counter="12.6" data-decimals="1" data-suffix="M">12.6M</h3>
+            <p>Tons CO₂e Verified Under GHG Protocol</p>
+          </div>
+
+          <!-- Stat 3 -->
+          <div class="stat-item">
+            <h3 data-counter="99.4" data-decimals="1" data-suffix="%">99.4%</h3>
+            <p>First-Time Audit Clearance Rate</p>
+          </div>
+
+          <!-- Stat 4 -->
+          <div class="stat-item">
+            <h3 data-counter="2.4" data-decimals="1" data-prefix="+" data-suffix=" Tiers">+2.4 Tiers</h3>
+            <p>Average ESG Rating Improvement</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         HOME 2 SECTION 6: DUAL CTA BANNER (ENTERPRISE VS SME)
+         ======================================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Choose Your Engagement Pathway</div>
+          <h2>Scalable Assurance Designed for Your Enterprise Size</h2>
+          <p class="lead-text" style="margin-left: auto; margin-right: auto;">
+            Whether you are a multinational conglomerate facing statutory deadlines or a high-growth SME unlocking investor capital, we have a specialized advisory track.
+          </p>
+        </div>
+
+        <div class="card-grid card-grid-2">
+          <!-- Path 1: For Enterprises -->
+          <div class="esg-card tilt-card" style="background: linear-gradient(135deg, var(--color-surface) 0%, rgba(10, 56, 44, 0.05) 100%);">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <div class="badge" style="background: rgba(16, 185, 129, 0.2);">Multinational Track</div>
+            <h3>For Large Enterprises</h3>
+            <p>
+              Full multi-jurisdictional CSRD/ESRS assurance, complete Scope 1–3 automation, auditor defense support, and dedicated ESG telemetry dashboard integration.
+            </p>
+            <a href="contact.html" class="btn btn-primary" style="width: 100%;">
+              Inquire Enterprise Advisory
+            </a>
+          </div>
+
+          <!-- Path 2: For SMEs -->
+          <div class="esg-card tilt-card" style="background: linear-gradient(135deg, var(--color-surface) 0%, rgba(217, 119, 6, 0.05) 100%);">
+            <div class="card-icon" style="color: var(--color-accent); background: rgba(217, 119, 6, 0.1);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+              </svg>
+            </div>
+            <div class="badge" style="background: rgba(217, 119, 6, 0.2); color: #B45309;">Accelerated Track</div>
+            <h3>For SMEs &amp; Growth Companies</h3>
+            <p>
+              Fast-track Scope 1 &amp; 2 carbon accounting, VSME reporting compliance, and supplier qualification packets designed to satisfy Tier-1 customer questionnaires.
+            </p>
+            <a href="contact.html" class="btn btn-accent" style="width: 100%;">
+              Launch SME Fast-Track
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+    <footer class="site-footer">
+    <div class="footer-top-bar">
+      <div class="container footer-top-wrapper">
+        <div class="footer-status-pill">
+          <span class="status-dot"></span>
+          <span>GHQ Engine: <strong>Live &amp; Verified</strong></span>
+        </div>
+        <div class="footer-newsletter-box">
+          <div class="newsletter-text">
+            <strong>Subscribe to ESG Regulatory Briefs</strong>
+            <span>Monthly updates on EU CSRD, SEC &amp; ISSB frameworks.</span>
+          </div>
+          <form class="newsletter-form js-validate-form">
+            <input type="email" placeholder="Enter work email..." required class="form-control footer-input">
+            <button type="submit" class="btn btn-accent btn-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-main">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="navbar-brand footer-logo">
+            <svg viewBox="0 0 280 64" width="160" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ftrGlobeGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#064E3B"/>
+              <stop offset="100%" stop-color="#022C22"/>
+            </linearGradient>
+            <linearGradient id="ftrLeaf1" x1="12" y1="8" x2="32" y2="36" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#34D399"/>
+              <stop offset="50%" stop-color="#10B981"/>
+              <stop offset="100%" stop-color="#059669"/>
+            </linearGradient>
+            <linearGradient id="ftrLeaf2" x1="22" y1="8" x2="22" y2="36" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#6EE7B7"/>
+              <stop offset="100%" stop-color="#047857"/>
+            </linearGradient>
+            <linearGradient id="ftrOrbitGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#10B981"/>
+              <stop offset="50%" stop-color="#06B6D4"/>
+              <stop offset="100%" stop-color="#F59E0B"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(10, 10)">
+            <circle cx="22" cy="22" r="21" stroke="url(#ftrOrbitGrad)" stroke-width="1.5" stroke-dasharray="4 2 1 2" opacity="0.9"/>
+            <ellipse cx="22" cy="22" rx="21" ry="8" stroke="#10B981" stroke-width="1" stroke-dasharray="2 3" transform="rotate(-25 22 22)" opacity="0.6"/>
+            <circle cx="22" cy="22" r="18" fill="url(#ftrGlobeGrad)" stroke="#10B981" stroke-width="1"/>
+            <path d="M 4 22 A 18 7 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+            <path d="M 4 22 A 18 14 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.3"/>
+            <path d="M 22 4 A 7 18 0 0 0 22 40" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+            <path d="M 22 9 C 14 15 13 25 22 34 C 20 28 20 18 22 9 Z" fill="url(#ftrLeaf1)"/>
+            <path d="M 22 9 C 30 15 31 25 22 34 C 24 28 24 18 22 9 Z" fill="url(#ftrLeaf2)"/>
+            <path d="M 22 10 V 33" stroke="#ECFDF5" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="39" cy="14" r="2.5" fill="#F59E0B"/>
+            <circle cx="39" cy="14" r="1" fill="#FFFFFF"/>
+            <circle cx="5" cy="30" r="1.8" fill="#06B6D4"/>
+            <circle cx="22" cy="4" r="1.5" fill="#10B981"/>
+          </g>
+          <text x="65" y="30" font-family="'Outfit', 'Inter', sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" letter-spacing="0.02em">VERDANT<tspan fill="#10B981">ESG</tspan></text>
+          <text x="66" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" fill="#94A3B8" letter-spacing="0.18em">SUSTAINABILITY &amp; AUDIT</text>
+        </svg>
+          </a>
+          <p class="footer-desc">
+            Authoritative ESG reporting, GHG Protocol Scope 1–3 verification, and strategic climate governance for corporations globally.
+          </p>
+          <div class="footer-badges">
+            <span class="cert-badge">ISO 14064-3</span>
+            <span class="cert-badge">GHG Protocol</span>
+            <span class="cert-badge">CSRD Ready</span>
+          </div>
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn" class="social-btn">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter/X" class="social-btn">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" aria-label="GitHub" class="social-btn">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Advisory Services -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Advisory Services</h4>
+          <ul class="footer-menu">
+            <li><a href="services.html">Sustainability Audits</a></li>
+            <li><a href="services.html">CSRD / ESRS Reporting</a></li>
+            <li><a href="services.html">Scope 1–3 Accounting</a></li>
+            <li><a href="services.html">Double Materiality</a></li>
+            <li><a href="services.html">ESG Benchmarking</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-menu">
+            <li><a href="about.html">About Verdant</a></li>
+            <li><a href="case-studies.html">Client Case Studies</a></li>
+            <li><a href="contact.html">Contact Advisory</a></li>
+            <li><a href="login.html">Client Portal</a></li>
+            <li><a href="coming-soon.html">Q4 ESG Toolkit</a></li>
+          </ul>
+        </div>
+
+        <!-- Global HQ -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Global HQ</h4>
+          <div class="footer-contact-info">
+            <p><strong>London • Frankfurt • New York</strong></p>
+            <p><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> assurance@verdantesg.com</p>
+            <p><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> +44 20 7946 0912</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 Verdant ESG Consultancy Ltd. All rights reserved. Registered ISO 14064-3 Firm.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Assurance</a>
+          <a href="sitemap.xml">Sitemap</a>
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/3d-effects.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

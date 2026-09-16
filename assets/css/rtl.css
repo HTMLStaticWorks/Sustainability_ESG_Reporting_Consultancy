@@ -1,0 +1,75 @@
+/* ==========================================================================
+   VERDANT ESG - RTL (RIGHT-TO-LEFT) STYLESHEET
+   Comprehensive bidirectional support for Arabic/Hebrew layouts
+   ========================================================================== */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .section-header.text-left {
+  text-align: right;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* Center alignments remain strictly centered per prompt requirements */
+[dir="rtl"] .esg-card,
+[dir="rtl"] .case-body,
+[dir="rtl"] .pricing-card,
+[dir="rtl"] .section-header {
+  text-align: center;
+}
+
+/* Navbar */
+[dir="rtl"] .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .mobile-drawer {
+  right: auto;
+  left: -320px;
+}
+
+[dir="rtl"] .mobile-drawer-backdrop.active .mobile-drawer {
+  transform: translateX(320px);
+}
+
+/* Timeline */
+[dir="rtl"] .timeline-process::before {
+  left: 10%;
+  right: 10%;
+}
+
+/* Form feedback and icons */
+[dir="rtl"] .form-group {
+  text-align: right;
+}
+
+/* Dashboard Sidebar */
+[dir="rtl"] .dashboard-sidebar {
+  border-right: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[dir="rtl"] .sidebar-item.active {
+  border-left: none;
+  border-right: 3px solid var(--color-primary-glow);
+}
+
+@media (max-width: 860px) {
+  [dir="rtl"] .dashboard-sidebar {
+    left: auto;
+    right: -270px;
+  }
+  [dir="rtl"] .dashboard-sidebar.mobile-open {
+    transform: translateX(-270px);
+  }
+}
+
+/* Flipped arrow icons */
+[dir="rtl"] .icon-arrow-right {
+  transform: scaleX(-1);
+}
