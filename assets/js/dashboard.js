@@ -308,13 +308,15 @@
     const sidebar = document.querySelector('.dashboard-sidebar');
     if (!toggleBtn || !sidebar) return;
 
-    toggleBtn.addEventListener('click', () => {
+    toggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       sidebar.classList.toggle('mobile-open');
     });
 
     document.addEventListener('click', (e) => {
-      if (window.innerWidth <= 860 && sidebar.classList.contains('mobile-open')) {
-        if (!sidebar.contains(e.target) && e.target !== toggleBtn) {
+      if (sidebar.classList.contains('mobile-open')) {
+        if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
           sidebar.classList.remove('mobile-open');
         }
       }

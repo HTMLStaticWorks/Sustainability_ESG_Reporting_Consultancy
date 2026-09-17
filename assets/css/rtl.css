@@ -8,6 +8,17 @@
   text-align: right;
 }
 
+/* Ensure Brand Logos and SVG Brand Text maintain LTR rendering coordinates */
+[dir="rtl"] .navbar-brand,
+[dir="rtl"] .navbar-brand svg,
+[dir="rtl"] .dash-topbar-brand svg,
+[dir="rtl"] .sidebar-header svg,
+[dir="rtl"] svg text {
+  direction: ltr !important;
+  text-anchor: start !important;
+  unicode-bidi: isolate;
+}
+
 [dir="rtl"] .section-header.text-left {
   text-align: right;
   margin-right: 0;

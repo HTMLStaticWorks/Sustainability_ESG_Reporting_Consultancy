@@ -54,15 +54,21 @@
     document.documentElement.setAttribute('dir', savedDir);
 
     const rtlBtns = document.querySelectorAll('.js-rtl-toggle');
+    const updateRTLBtns = (dir) => {
+      document.querySelectorAll('.js-rtl-toggle').forEach(btn => {
+        btn.textContent = dir.toUpperCase();
+      });
+    };
+    updateRTLBtns(savedDir);
+
     rtlBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
         const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
         document.documentElement.setAttribute('dir', newDir);
         localStorage.setItem('verdant_dir', newDir);
-        btn.textContent = newDir.toUpperCase();
+        updateRTLBtns(newDir);
       });
-      btn.textContent = savedDir.toUpperCase();
     });
   }
 
