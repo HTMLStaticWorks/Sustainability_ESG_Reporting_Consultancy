@@ -192,11 +192,11 @@
         comment = 'Strong ESG Governance. Scope 1 & 2 fully compliant, advancing Scope 3.';
       } else if (score >= 60) {
         tier = 'A Moderate';
-        strokeColor = '#F59E0B';
+        strokeColor = '#059669';
         comment = 'Average compliance posture. Carbon disclosures required within 90 days.';
       } else {
         tier = 'BBB Vulnerable';
-        strokeColor = '#EF4444';
+        strokeColor = '#6EE7B7';
         comment = 'Urgent compliance alert: Risk of supply-chain exclusion & regulatory fines.';
       }
 

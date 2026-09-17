@@ -50,8 +50,15 @@
 
 /* Dashboard Sidebar */
 [dir="rtl"] .dashboard-sidebar {
+  left: auto;
+  right: 0;
   border-right: none;
   border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[dir="rtl"] .dashboard-main {
+  margin-left: 0;
+  margin-right: 270px;
 }
 
 [dir="rtl"] .sidebar-item.active {
@@ -66,6 +73,9 @@
   }
   [dir="rtl"] .dashboard-sidebar.mobile-open {
     transform: translateX(-270px);
+  }
+  [dir="rtl"] .dashboard-main {
+    margin-right: 0;
   }
 }
 

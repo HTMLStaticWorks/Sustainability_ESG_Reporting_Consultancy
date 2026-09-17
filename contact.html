@@ -60,21 +60,11 @@
       </a>
 
       <nav class="nav-menu" aria-label="Primary Navigation">
-        <div class="nav-dropdown">
-          <a href="index.html" class="nav-link dropdown-trigger">
-            Home
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </a>
-          <div class="dropdown-menu">
-            <a href="index.html" class="dropdown-item">Home 1</a>
-            <a href="home-2.html" class="dropdown-item">Home 2</a>
-          </div>
-        </div>
+        <a href="index.html" class="nav-link">Home 1</a>
+        <a href="home-2.html" class="nav-link">Home 2</a>
+        <a href="about.html" class="nav-link">About</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="case-studies.html" class="nav-link">Case Studies</a>
-        <a href="about.html" class="nav-link">About</a>
         <a href="contact.html" class="nav-link active">Contact</a>
       </nav>
 
@@ -116,20 +106,60 @@
   <div class="mobile-drawer-backdrop">
     <div class="mobile-drawer">
       <div class="mobile-drawer-header">
-        <span style="font-family: var(--font-display); font-weight: 800; color: var(--color-primary);">VERDANT ESG</span>
+        <a href="index.html" class="brand-logo" aria-label="Verdant ESG Home">
+          <svg width="220" height="48" viewBox="0 0 220 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="hdrGlobeGradMobCnt" x1="4" y1="4" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#064E3B"/>
+                <stop offset="100%" stop-color="#022C22"/>
+              </linearGradient>
+              <linearGradient id="hdrLeaf1MobCnt" x1="12" y1="8" x2="32" y2="36" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#34D399"/>
+                <stop offset="50%" stop-color="#10B981"/>
+                <stop offset="100%" stop-color="#059669"/>
+              </linearGradient>
+              <linearGradient id="hdrLeaf2MobCnt" x1="22" y1="8" x2="22" y2="36" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#6EE7B7"/>
+                <stop offset="100%" stop-color="#047857"/>
+              </linearGradient>
+              <linearGradient id="hdrOrbitGradMobCnt" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#10B981"/>
+                <stop offset="50%" stop-color="#06B6D4"/>
+                <stop offset="100%" stop-color="#F59E0B"/>
+              </linearGradient>
+            </defs>
+            <g transform="translate(10, 10)">
+              <circle cx="22" cy="22" r="21" stroke="url(#hdrOrbitGradMobCnt)" stroke-width="1.5" stroke-dasharray="4 2 1 2" opacity="0.9"/>
+              <ellipse cx="22" cy="22" rx="21" ry="8" stroke="#10B981" stroke-width="1" stroke-dasharray="2 3" transform="rotate(-25 22 22)" opacity="0.6"/>
+              <circle cx="22" cy="22" r="18" fill="url(#hdrGlobeGradMobCnt)" stroke="#10B981" stroke-width="1"/>
+              <path d="M 4 22 A 18 7 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+              <path d="M 4 22 A 18 14 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.3"/>
+              <path d="M 22 4 A 7 18 0 0 0 22 40" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+              <path d="M 22 9 C 14 15 13 25 22 34 C 20 28 20 18 22 9 Z" fill="url(#hdrLeaf1MobCnt)"/>
+              <path d="M 22 9 C 30 15 31 25 22 34 C 24 28 24 18 22 9 Z" fill="url(#hdrLeaf2MobCnt)"/>
+              <path d="M 22 10 V 33" stroke="#ECFDF5" stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="39" cy="14" r="2.5" fill="#F59E0B"/>
+              <circle cx="39" cy="14" r="1" fill="#FFFFFF"/>
+              <circle cx="5" cy="30" r="1.8" fill="#06B6D4"/>
+              <circle cx="22" cy="4" r="1.5" fill="#10B981"/>
+            </g>
+            <text x="65" y="30" font-family="'Outfit', 'Inter', sans-serif" font-size="20" font-weight="800" fill="currentColor" letter-spacing="0.02em" class="brand-text-main">VERDANT<tspan fill="#10B981">ESG</tspan></text>
+            <text x="66" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" fill="#64748B" letter-spacing="0.18em">SUSTAINABILITY &amp; AUDIT</text>
+          </svg>
+        </a>
         <button class="utility-btn js-drawer-close" aria-label="Close Menu">✕</button>
       </div>
       <div class="mobile-nav-links">
-        <a href="index.html" class="mobile-nav-link">Home (Version 1)</a>
-        <a href="home-2.html" class="mobile-nav-link">Home (Version 2)</a>
+        <a href="index.html" class="mobile-nav-link">Home 1</a>
+        <a href="home-2.html" class="mobile-nav-link">Home 2</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
         <a href="services.html" class="mobile-nav-link">Services</a>
         <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
-        <a href="about.html" class="mobile-nav-link">About Us</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="contact.html" class="mobile-nav-link active">Contact</a>
       </div>
       <div class="mobile-drawer-footer">
-        <a href="login.html" class="btn btn-outline" style="width: 100%;">Client Login</a>
-        <a href="dashboard.html" class="btn btn-primary" style="width: 100%;">Client Dashboard</a>
+        <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
+        <a href="dashboard.html" class="btn btn-primary" style="width: 100%;">Dashboard</a>
       </div>
     </div>
   </div>
@@ -148,9 +178,9 @@
           </p>
         </div>
 
-        <div style="max-width: 780px; margin: 0 auto; background: var(--color-surface); border: 1.5px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-10); box-shadow: var(--shadow-xl);">
+        <div class="contact-form-card">
           <form class="js-validate-form" novalidate>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5);">
+            <div class="form-row-grid">
               <div class="form-group">
                 <label class="form-label" for="contactName">Full Name *</label>
                 <input type="text" id="contactName" class="form-control" placeholder="e.g. Eleanor Hughes" required>
@@ -164,7 +194,7 @@
               </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5);">
+            <div class="form-row-grid">
               <div class="form-group">
                 <label class="form-label" for="contactCompany">Company / Entity Name *</label>
                 <input type="text" id="contactCompany" class="form-control" placeholder="e.g. Apex Manufacturing AG" required>
@@ -269,7 +299,7 @@
           </div>
 
           <!-- Active Hub Info Sidebar -->
-          <div style="padding: 28px; background: var(--color-surface-subtle); border-left: 1px solid var(--color-border); display: flex; flex-direction: column; justify-content: space-between;">
+          <div class="map-hub-sidebar" style="padding: 28px; background: var(--color-surface-subtle); border-left: 1px solid var(--color-border); display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div class="badge" id="hubTagBadge" style="margin-bottom: 12px;">Global Headquarters</div>
               <h3 id="hubTitle" style="font-size: 1.4rem; margin-bottom: 12px; color: var(--color-text);">London, UK (Global HQ)</h3>
@@ -277,7 +307,7 @@
                 30 St Mary Axe, City of London, EC3A 8EP
               </p>
               
-              <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.875rem; color: var(--color-text); margin-bottom: 24px;">
+              <div class="map-hub-contact-list" style="display: flex; flex-direction: column; gap: 12px; font-size: 0.875rem; color: var(--color-text); margin-bottom: 24px;">
                 <div style="display: flex; align-items: center; gap: 10px;">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                   <span id="hubEmail" style="font-weight: 600;">uk.audit@verdantesg.com</span>

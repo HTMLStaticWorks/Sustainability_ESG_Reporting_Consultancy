@@ -46,7 +46,8 @@
 
     const width = rect.width;
     const height = rect.height;
-    const padding = { top: 30, right: 30, bottom: 40, left: 50 };
+    const isMobile = width <= 480;
+    const padding = { top: 30, right: isMobile ? 15 : 30, bottom: 40, left: isMobile ? 35 : 50 };
 
     ctx.clearRect(0, 0, width, height);
 
@@ -155,7 +156,8 @@
 
     const width = rect.width;
     const height = rect.height;
-    const padding = { top: 25, right: 25, bottom: 45, left: 140 };
+    const isMobile = width <= 480;
+    const padding = { top: 25, right: isMobile ? 35 : 25, bottom: 45, left: isMobile ? 110 : 140 };
 
     ctx.clearRect(0, 0, width, height);
 
@@ -178,10 +180,10 @@
       const y = padding.top + idx * rowHeight;
 
       // Label
-      ctx.font = '600 12px "Plus Jakarta Sans", sans-serif';
+      ctx.font = isMobile ? '600 10px "Plus Jakarta Sans", sans-serif' : '600 12px "Plus Jakarta Sans", sans-serif';
       ctx.fillStyle = document.documentElement.getAttribute('data-theme') === 'dark' ? '#F1F5F3' : '#12201B';
       ctx.textAlign = 'right';
-      ctx.fillText(cat, padding.left - 15, y + 18);
+      ctx.fillText(cat, padding.left - (isMobile ? 5 : 15), y + 18);
 
       // Background Track
       const barH = 12;
