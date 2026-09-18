@@ -94,3 +94,16 @@
 [dir="rtl"] .icon-arrow-right {
   transform: scaleX(-1);
 }
+
+/* Auth Header RTL */
+[dir="rtl"] .auth-header {
+  right: auto;
+  left: 24px;
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .auth-header {
+    right: auto;
+    left: 16px;
+  }
+}
