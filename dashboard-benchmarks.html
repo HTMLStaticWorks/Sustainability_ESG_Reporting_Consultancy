@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industry Benchmarks — Verdant ESG Client Portal</title>
+  <meta name="description" content="Peer cohort comparison and ESG rating trajectory analytics for enterprise clients.">
+  
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    <!-- PERSISTENT SIDEBAR NAVIGATION -->
+    <aside class="dashboard-sidebar" aria-label="Dashboard Sidebar">
+      <div class="sidebar-header" style="padding: 18px 20px;">
+        <a href="index.html" class="navbar-brand" aria-label="Verdant ESG Home">
+          <svg viewBox="0 0 280 64" width="170" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="dbSbGlobeGradBench" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#064E3B"/>
+                <stop offset="100%" stop-color="#022C22"/>
+              </linearGradient>
+              <linearGradient id="dbSbLeaf1Bench" x1="12" y1="8" x2="32" y2="36" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#34D399"/>
+                <stop offset="50%" stop-color="#10B981"/>
+                <stop offset="100%" stop-color="#059669"/>
+              </linearGradient>
+              <linearGradient id="dbSbLeaf2Bench" x1="22" y1="8" x2="22" y2="36" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#6EE7B7"/>
+                <stop offset="100%" stop-color="#047857"/>
+              </linearGradient>
+              <linearGradient id="dbSbOrbitGradBench" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#10B981"/>
+                <stop offset="50%" stop-color="#06B6D4"/>
+                <stop offset="100%" stop-color="#F59E0B"/>
+              </linearGradient>
+            </defs>
+            <g transform="translate(10, 10)">
+              <circle cx="22" cy="22" r="21" stroke="url(#dbSbOrbitGradBench)" stroke-width="1.5" stroke-dasharray="4 2 1 2" opacity="0.9"/>
+              <ellipse cx="22" cy="22" rx="21" ry="8" stroke="#10B981" stroke-width="1" stroke-dasharray="2 3" transform="rotate(-25 22 22)" opacity="0.6"/>
+              <circle cx="22" cy="22" r="18" fill="url(#dbSbGlobeGradBench)" stroke="#10B981" stroke-width="1"/>
+              <path d="M 4 22 A 18 7 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+              <path d="M 4 22 A 18 14 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.3"/>
+              <path d="M 22 4 A 7 18 0 0 0 22 40" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+              <path d="M 22 9 C 14 15 13 25 22 34 C 20 28 20 18 22 9 Z" fill="url(#dbSbLeaf1Bench)"/>
+              <path d="M 22 9 C 30 15 31 25 22 34 C 24 28 24 18 22 9 Z" fill="url(#dbSbLeaf2Bench)"/>
+              <path d="M 22 10 V 33" stroke="#ECFDF5" stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="39" cy="14" r="2.5" fill="#F59E0B"/>
+              <circle cx="39" cy="14" r="1" fill="#FFFFFF"/>
+              <circle cx="5" cy="30" r="1.8" fill="#06B6D4"/>
+              <circle cx="22" cy="4" r="1.5" fill="#10B981"/>
+            </g>
+            <text x="65" y="30" font-family="'Outfit', 'Inter', sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" letter-spacing="0.02em">VERDANT<tspan fill="#10B981">ESG</tspan></text>
+            <text x="66" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" fill="#64748B" letter-spacing="0.18em">SUSTAINABILITY &amp; AUDIT</text>
+          </svg>
+        </a>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="dashboard.html" class="sidebar-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          Overview &amp; Telemetry
+        </a>
+        <a href="dashboard-reporting.html" class="sidebar-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+          Data Ingestion &amp; Reports
+        </a>
+        <a href="dashboard-benchmarks.html" class="sidebar-item active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          Industry Benchmarks
+        </a>
+        <a href="dashboard-billing.html" class="sidebar-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          Billing &amp; Retainer
+        </a>
+        <a href="dashboard-settings.html" class="sidebar-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          Security &amp; API Keys
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <button class="utility-btn js-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme" style="width: 32px; height: 32px; border-color: rgba(255,255,255,0.15); color: #FFFFFF;">
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </button>
+          <button class="utility-btn js-rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL Layout" style="width: 32px; height: 32px; font-weight: 800; font-size: 0.7rem; border-color: rgba(255,255,255,0.15); color: #FFFFFF;">
+            LTR
+          </button>
+        </div>
+
+        <div style="font-size: 0.75rem; color: #64748B; margin-bottom: 8px;">AUDIT ENGAGEMENT TIER</div>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: #34D399;">Enterprise Retainer</span>
+          <span style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.2); color: #10B981; padding: 2px 6px; border-radius: 4px;">ACTIVE</span>
+        </div>
+        <a href="login.html" class="sidebar-item" style="padding: 8px 0; color: #EF4444;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+          Sign Out of Portal
+        </a>
+      </div>
+    </aside>
+
+    <!-- DASHBOARD MAIN CONTAINER -->
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="dash-topbar-brand" style="display: flex; align-items: center; gap: 14px;">
+          <button id="dashSidebarToggle" class="utility-btn" aria-label="Toggle Sidebar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <a href="index.html" class="navbar-brand" aria-label="Verdant ESG Home">
+            <svg viewBox="0 0 280 64" width="180" height="42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="dbTopGlobeGradBmk" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#064E3B"/>
+                  <stop offset="100%" stop-color="#022C22"/>
+                </linearGradient>
+                <linearGradient id="dbTopLeaf1Bmk" x1="12" y1="8" x2="32" y2="36" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#34D399"/>
+                  <stop offset="50%" stop-color="#10B981"/>
+                  <stop offset="100%" stop-color="#059669"/>
+                </linearGradient>
+                <linearGradient id="dbTopLeaf2Bmk" x1="22" y1="8" x2="22" y2="36" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#6EE7B7"/>
+                  <stop offset="100%" stop-color="#047857"/>
+                </linearGradient>
+                <linearGradient id="dbTopOrbitGradBmk" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#10B981"/>
+                  <stop offset="50%" stop-color="#06B6D4"/>
+                  <stop offset="100%" stop-color="#F59E0B"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(10, 10)">
+                <circle cx="22" cy="22" r="21" stroke="url(#dbTopOrbitGradBmk)" stroke-width="1.5" stroke-dasharray="4 2 1 2" opacity="0.9"/>
+                <ellipse cx="22" cy="22" rx="21" ry="8" stroke="#10B981" stroke-width="1" stroke-dasharray="2 3" transform="rotate(-25 22 22)" opacity="0.6"/>
+                <circle cx="22" cy="22" r="18" fill="url(#dbTopGlobeGradBmk)" stroke="#10B981" stroke-width="1"/>
+                <path d="M 4 22 A 18 7 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+                <path d="M 4 22 A 18 14 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.3"/>
+                <path d="M 22 4 A 7 18 0 0 0 22 40" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+                <path d="M 22 9 C 14 15 13 25 22 34 C 20 28 20 18 22 9 Z" fill="url(#dbTopLeaf1Bmk)"/>
+                <path d="M 22 9 C 30 15 31 25 22 34 C 24 28 24 18 22 9 Z" fill="url(#dbTopLeaf2Bmk)"/>
+                <path d="M 22 10 V 33" stroke="#ECFDF5" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="39" cy="14" r="2.5" fill="#F59E0B"/>
+                <circle cx="39" cy="14" r="1" fill="#FFFFFF"/>
+                <circle cx="5" cy="30" r="1.8" fill="#06B6D4"/>
+                <circle cx="22" cy="4" r="1.5" fill="#10B981"/>
+              </g>
+              <text x="65" y="30" font-family="'Outfit', 'Inter', sans-serif" font-size="20" font-weight="800" fill="currentColor" letter-spacing="0.02em" class="brand-text-main">VERDANT<tspan fill="#10B981">ESG</tspan></text>
+              <text x="66" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" fill="#64748B" letter-spacing="0.18em">SUSTAINABILITY &amp; AUDIT</text>
+            </svg>
+          </a>
+        </div>
+
+        <div class="dash-topbar-actions" style="display: flex; align-items: center; gap: 14px;">
+          <div class="dash-user-profile" style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--color-primary); color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0; border: 2px solid var(--color-primary-light);">
+              MV
+            </div>
+            <div class="dash-user-info">
+              <div style="font-size: 0.85rem; font-weight: 700; white-space: nowrap;">Marcus Vance</div>
+              <div style="font-size: 0.75rem; color: var(--color-text-muted); white-space: nowrap;">CSO / Admin</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+        <!-- Skeleton Loader -->
+        <div class="skeleton-wrapper">
+          <div class="skeleton" style="height: 340px; margin-bottom: 24px;"></div>
+          <div class="dash-grid-4">
+            <div class="skeleton" style="height: 120px;"></div>
+            <div class="skeleton" style="height: 120px;"></div>
+            <div class="skeleton" style="height: 120px;"></div>
+            <div class="skeleton" style="height: 120px;"></div>
+          </div>
+        </div>
+
+        <!-- Real Loaded Content: Exclusively Dedicated to Benchmarks -->
+        <div class="real-content" style="display: none;">
+          <!-- Dedicated Page Header -->
+          <div class="dash-page-header">
+            <div>
+              <div class="dash-breadcrumb">
+                <a href="dashboard.html">Portal</a>
+                <span class="dash-breadcrumb-sep">/</span>
+                <span style="color: var(--color-text);">Industry Benchmarks</span>
+              </div>
+              <h2>Industry Peer Cohort Benchmarking</h2>
+              <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 0;">
+                Comparative analytics across 82 European Industrial Equipment entities under MSCI, Sustainalytics, and CDP.
+              </p>
+            </div>
+            <div class="dash-header-actions">
+              <button class="btn btn-outline btn-sm" onclick="alert('Exporting benchmark cohort diagnostic report (PDF)...');">
+                Export Benchmark Briefing
+              </button>
+            </div>
+          </div>
+
+          <!-- Main Interactive Benchmark Chart Card -->
+          <div class="dash-chart-card">
+            <div class="dash-chart-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+              <div>
+                <h3 style="margin-bottom: 4px;">Competitor Comparison: Key ESG Performance Dimensions</h3>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted);">
+                  Trans-Euro Dynamics BV (Green Bar) vs European Industry Median (Amber Indicator)
+                </div>
+              </div>
+              <div class="dash-chart-legend" style="display: flex; gap: 20px; font-size: 0.85rem;">
+                <span style="display: flex; align-items: center; gap: 6px;">
+                  <span style="width: 12px; height: 12px; border-radius: 4px; background: #10B981;"></span>
+                  Your Performance
+                </span>
+                <span style="display: flex; align-items: center; gap: 6px;">
+                  <span style="width: 12px; height: 12px; border-radius: 4px; background: #F59E0B;"></span>
+                  Industry Median
+                </span>
+              </div>
+            </div>
+
+            <div style="height: 280px; width: 100%;">
+              <canvas id="benchmarkChartCanvas" style="width: 100%; height: 100%; display: block;"></canvas>
+            </div>
+          </div>
+
+          <!-- 4-Quadrant Benchmark Breakdown Cards -->
+          <div class="dash-grid-4">
+            <div class="esg-card" style="padding: 20px;">
+              <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: var(--color-primary-light);">Decarbonization</span>
+              <div style="font-size: 1.65rem; font-weight: 800; color: #10B981; margin: 6px 0;">Top 5%</div>
+              <p style="font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.45; margin: 0;">
+                -38% Scope 1 &amp; 2 reduction vs European sector median of -18%.
+              </p>
+            </div>
+
+            <div class="esg-card" style="padding: 20px;">
+              <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #06B6D4;">Renewable Power</span>
+              <div style="font-size: 1.65rem; font-weight: 800; color: #06B6D4; margin: 6px 0;">Top 15%</div>
+              <p style="font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.45; margin: 0;">
+                75% verified Power Purchase Agreements (PPAs) vs 42% sector median.
+              </p>
+            </div>
+
+            <div class="esg-card" style="padding: 20px;">
+              <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #8B5CF6;">Board Diversity</span>
+              <div style="font-size: 1.65rem; font-weight: 800; color: #8B5CF6; margin: 6px 0;">Top 8%</div>
+              <p style="font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.45; margin: 0;">
+                44% independent female board representation with Climate Committee.
+              </p>
+            </div>
+
+            <div class="esg-card" style="padding: 20px;">
+              <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #F59E0B;">Supplier Auditing</span>
+              <div style="font-size: 1.65rem; font-weight: 800; color: #F59E0B; margin: 6px 0;">Top 10%</div>
+              <p style="font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.45; margin: 0;">
+                84% Tier-1 primary supplier ingestion coverage vs 31% sector median.
+              </p>
+            </div>
+          </div>
+
+          <!-- Peer Leaderboard Table -->
+          <div class="dash-chart-card">
+            <h3 style="margin-bottom: 6px;">European Capital Equipment ESG Leaderboard</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 16px;">
+              Verified cohort ratings calculated under EFRAG and MSCI methodology guidelines.
+            </p>
+
+            <div class="dash-table-wrapper">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Cohort Rank</th>
+                    <th>Enterprise / Subsidiary</th>
+                    <th>Overall ESG Score</th>
+                    <th>MSCI Equivalent</th>
+                    <th>CSRD Assurance Status</th>
+                    <th>Decarbonization Trajectory</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="background: rgba(16, 185, 129, 0.05);">
+                    <td style="font-weight: 800; color: var(--color-primary);">#04 (Leader)</td>
+                    <td><strong>Trans-Euro Dynamics BV (Your Enterprise)</strong></td>
+                    <td><strong style="color: var(--color-primary);">88 / 100</strong></td>
+                    <td><span style="font-weight: 700; color: #059669;">AAA Prime</span></td>
+                    <td><span style="background: rgba(16, 185, 129, 0.15); color: #059669; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">ISAE 3000 Verified</span></td>
+                    <td>-38% (SBTi 1.5°C Aligned)</td>
+                  </tr>
+                  <tr>
+                    <td>#01</td>
+                    <td>Nordic Heavy Engineering AB</td>
+                    <td>94 / 100</td>
+                    <td>AAA Prime</td>
+                    <td><span style="color: #059669; font-weight: 700;">Verified</span></td>
+                    <td>-44%</td>
+                  </tr>
+                  <tr>
+                    <td>#02</td>
+                    <td>Alpine Precision Components AG</td>
+                    <td>91 / 100</td>
+                    <td>AAA Prime</td>
+                    <td><span style="color: #059669; font-weight: 700;">Verified</span></td>
+                    <td>-41%</td>
+                  </tr>
+                  <tr>
+                    <td>#03</td>
+                    <td>Bavaria Motion Systems SE</td>
+                    <td>89 / 100</td>
+                    <td>AAA Prime</td>
+                    <td><span style="color: #059669; font-weight: 700;">Verified</span></td>
+                    <td>-39%</td>
+                  </tr>
+                  <tr>
+                    <td>#42 (Median)</td>
+                    <td>European Sector Median Cohort (82 firms)</td>
+                    <td>68 / 100</td>
+                    <td>BBB Average</td>
+                    <td><span style="color: #F59E0B; font-weight: 700;">Partial</span></td>
+                    <td>-18%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

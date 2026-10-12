@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Ingestion &amp; Reports — Verdant ESG Client Portal</title>
+  <meta name="description" content="Operational telemetry ingestion and statutory compliance report downloads for Verdant ESG enterprise clients.">
+  
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    <!-- PERSISTENT SIDEBAR NAVIGATION -->
+    <aside class="dashboard-sidebar" aria-label="Dashboard Sidebar">
+      <div class="sidebar-header" style="padding: 18px 20px;">
+        <a href="index.html" class="navbar-brand" aria-label="Verdant ESG Home">
+          <svg viewBox="0 0 280 64" width="170" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="dbSbGlobeGradRep" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#064E3B"/>
+                <stop offset="100%" stop-color="#022C22"/>
+              </linearGradient>
+              <linearGradient id="dbSbLeaf1Rep" x1="12" y1="8" x2="32" y2="36" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#34D399"/>
+                <stop offset="50%" stop-color="#10B981"/>
+                <stop offset="100%" stop-color="#059669"/>
+              </linearGradient>
+              <linearGradient id="dbSbLeaf2Rep" x1="22" y1="8" x2="22" y2="36" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#6EE7B7"/>
+                <stop offset="100%" stop-color="#047857"/>
+              </linearGradient>
+              <linearGradient id="dbSbOrbitGradRep" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#10B981"/>
+                <stop offset="50%" stop-color="#06B6D4"/>
+                <stop offset="100%" stop-color="#F59E0B"/>
+              </linearGradient>
+            </defs>
+            <g transform="translate(10, 10)">
+              <circle cx="22" cy="22" r="21" stroke="url(#dbSbOrbitGradRep)" stroke-width="1.5" stroke-dasharray="4 2 1 2" opacity="0.9"/>
+              <ellipse cx="22" cy="22" rx="21" ry="8" stroke="#10B981" stroke-width="1" stroke-dasharray="2 3" transform="rotate(-25 22 22)" opacity="0.6"/>
+              <circle cx="22" cy="22" r="18" fill="url(#dbSbGlobeGradRep)" stroke="#10B981" stroke-width="1"/>
+              <path d="M 4 22 A 18 7 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+              <path d="M 4 22 A 18 14 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.3"/>
+              <path d="M 22 4 A 7 18 0 0 0 22 40" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+              <path d="M 22 9 C 14 15 13 25 22 34 C 20 28 20 18 22 9 Z" fill="url(#dbSbLeaf1Rep)"/>
+              <path d="M 22 9 C 30 15 31 25 22 34 C 24 28 24 18 22 9 Z" fill="url(#dbSbLeaf2Rep)"/>
+              <path d="M 22 10 V 33" stroke="#ECFDF5" stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="39" cy="14" r="2.5" fill="#F59E0B"/>
+              <circle cx="39" cy="14" r="1" fill="#FFFFFF"/>
+              <circle cx="5" cy="30" r="1.8" fill="#06B6D4"/>
+              <circle cx="22" cy="4" r="1.5" fill="#10B981"/>
+            </g>
+            <text x="65" y="30" font-family="'Outfit', 'Inter', sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" letter-spacing="0.02em">VERDANT<tspan fill="#10B981">ESG</tspan></text>
+            <text x="66" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" fill="#64748B" letter-spacing="0.18em">SUSTAINABILITY &amp; AUDIT</text>
+          </svg>
+        </a>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="dashboard.html" class="sidebar-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          Overview &amp; Telemetry
+        </a>
+        <a href="dashboard-reporting.html" class="sidebar-item active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+          Data Ingestion &amp; Reports
+        </a>
+        <a href="dashboard-benchmarks.html" class="sidebar-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          Industry Benchmarks
+        </a>
+        <a href="dashboard-billing.html" class="sidebar-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          Billing &amp; Retainer
+        </a>
+        <a href="dashboard-settings.html" class="sidebar-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          Security &amp; API Keys
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <button class="utility-btn js-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme" style="width: 32px; height: 32px; border-color: rgba(255,255,255,0.15); color: #FFFFFF;">
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </button>
+          <button class="utility-btn js-rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL Layout" style="width: 32px; height: 32px; font-weight: 800; font-size: 0.7rem; border-color: rgba(255,255,255,0.15); color: #FFFFFF;">
+            LTR
+          </button>
+        </div>
+
+        <div style="font-size: 0.75rem; color: #64748B; margin-bottom: 8px;">AUDIT ENGAGEMENT TIER</div>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: #34D399;">Enterprise Retainer</span>
+          <span style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.2); color: #10B981; padding: 2px 6px; border-radius: 4px;">ACTIVE</span>
+        </div>
+        <a href="login.html" class="sidebar-item" style="padding: 8px 0; color: #EF4444;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+          Sign Out of Portal
+        </a>
+      </div>
+    </aside>
+
+    <!-- DASHBOARD MAIN CONTAINER -->
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="dash-topbar-brand" style="display: flex; align-items: center; gap: 14px;">
+          <button id="dashSidebarToggle" class="utility-btn" aria-label="Toggle Sidebar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <a href="index.html" class="navbar-brand" aria-label="Verdant ESG Home">
+            <svg viewBox="0 0 280 64" width="180" height="42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="dbTopGlobeGradRep" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#064E3B"/>
+                  <stop offset="100%" stop-color="#022C22"/>
+                </linearGradient>
+                <linearGradient id="dbTopLeaf1Rep" x1="12" y1="8" x2="32" y2="36" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#34D399"/>
+                  <stop offset="50%" stop-color="#10B981"/>
+                  <stop offset="100%" stop-color="#059669"/>
+                </linearGradient>
+                <linearGradient id="dbTopLeaf2Rep" x1="22" y1="8" x2="22" y2="36" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#6EE7B7"/>
+                  <stop offset="100%" stop-color="#047857"/>
+                </linearGradient>
+                <linearGradient id="dbTopOrbitGradRep" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#10B981"/>
+                  <stop offset="50%" stop-color="#06B6D4"/>
+                  <stop offset="100%" stop-color="#F59E0B"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(10, 10)">
+                <circle cx="22" cy="22" r="21" stroke="url(#dbTopOrbitGradRep)" stroke-width="1.5" stroke-dasharray="4 2 1 2" opacity="0.9"/>
+                <ellipse cx="22" cy="22" rx="21" ry="8" stroke="#10B981" stroke-width="1" stroke-dasharray="2 3" transform="rotate(-25 22 22)" opacity="0.6"/>
+                <circle cx="22" cy="22" r="18" fill="url(#dbTopGlobeGradRep)" stroke="#10B981" stroke-width="1"/>
+                <path d="M 4 22 A 18 7 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+                <path d="M 4 22 A 18 14 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.3"/>
+                <path d="M 22 4 A 7 18 0 0 0 22 40" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+                <path d="M 22 9 C 14 15 13 25 22 34 C 20 28 20 18 22 9 Z" fill="url(#dbTopLeaf1Rep)"/>
+                <path d="M 22 9 C 30 15 31 25 22 34 C 24 28 24 18 22 9 Z" fill="url(#dbTopLeaf2Rep)"/>
+                <path d="M 22 10 V 33" stroke="#ECFDF5" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="39" cy="14" r="2.5" fill="#F59E0B"/>
+                <circle cx="39" cy="14" r="1" fill="#FFFFFF"/>
+                <circle cx="5" cy="30" r="1.8" fill="#06B6D4"/>
+                <circle cx="22" cy="4" r="1.5" fill="#10B981"/>
+              </g>
+              <text x="65" y="30" font-family="'Outfit', 'Inter', sans-serif" font-size="20" font-weight="800" fill="currentColor" letter-spacing="0.02em" class="brand-text-main">VERDANT<tspan fill="#10B981">ESG</tspan></text>
+              <text x="66" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" fill="#64748B" letter-spacing="0.18em">SUSTAINABILITY &amp; AUDIT</text>
+            </svg>
+          </a>
+        </div>
+
+        <div class="dash-topbar-actions" style="display: flex; align-items: center; gap: 14px;">
+          <div class="dash-user-profile" style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--color-primary); color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0; border: 2px solid var(--color-primary-light);">
+              MV
+            </div>
+            <div class="dash-user-info">
+              <div style="font-size: 0.85rem; font-weight: 700; white-space: nowrap;">Marcus Vance</div>
+              <div style="font-size: 0.75rem; color: var(--color-text-muted); white-space: nowrap;">CSO / Admin</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+        <!-- Skeleton Loaders -->
+        <div class="skeleton-wrapper">
+          <div class="dash-grid-4">
+            <div class="skeleton" style="height: 90px;"></div>
+            <div class="skeleton" style="height: 90px;"></div>
+            <div class="skeleton" style="height: 90px;"></div>
+            <div class="skeleton" style="height: 90px;"></div>
+          </div>
+          <div class="dash-grid-2">
+            <div class="skeleton" style="height: 380px;"></div>
+            <div class="skeleton" style="height: 380px;"></div>
+          </div>
+        </div>
+
+        <!-- Real Loaded Content -->
+        <div class="real-content" style="display: none;">
+          <!-- Dedicated Page Header -->
+          <div class="dash-page-header">
+            <div>
+              <div class="dash-breadcrumb">
+                <a href="dashboard.html">Portal</a>
+                <span class="dash-breadcrumb-sep">/</span>
+                <span style="color: var(--color-text);">Data Ingestion &amp; Reports</span>
+              </div>
+              <h2>Data Ingestion &amp; Regulatory Reports</h2>
+              <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 0;">
+                Directly upload raw meter telemetry, ERP ledgers, and download verified statutory audit workpapers.
+              </p>
+            </div>
+            <div class="dash-header-actions">
+              <button class="btn btn-outline btn-sm" onclick="alert('Triggering automated SAP ERP API synchronization...');">
+                Sync SAP S/4HANA
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Metrics Strip -->
+          <div class="dash-grid-4">
+            <div class="esg-card" style="padding: 16px; text-align: center;">
+              <span style="font-size: 0.75rem; color: var(--color-text-muted); font-weight: 700; text-transform: uppercase;">Ingested Files</span>
+              <div style="font-size: 1.8rem; font-weight: 800; color: var(--color-text); margin: 4px 0;">42 Files</div>
+              <span style="font-size: 0.75rem; color: var(--color-primary); font-weight: 600;">+6 this month</span>
+            </div>
+            <div class="esg-card" style="padding: 16px; text-align: center;">
+              <span style="font-size: 0.75rem; color: var(--color-text-muted); font-weight: 700; text-transform: uppercase;">Active Facilities</span>
+              <div style="font-size: 1.8rem; font-weight: 800; color: var(--color-text); margin: 4px 0;">14 Plants</div>
+              <span style="font-size: 0.75rem; color: var(--color-primary); font-weight: 600;">100% Telemetry Online</span>
+            </div>
+            <div class="esg-card" style="padding: 16px; text-align: center;">
+              <span style="font-size: 0.75rem; color: var(--color-text-muted); font-weight: 700; text-transform: uppercase;">Verified Scope 1-3</span>
+              <div style="font-size: 1.8rem; font-weight: 800; color: var(--color-primary); margin: 4px 0;">98.4%</div>
+              <span style="font-size: 0.75rem; color: var(--color-text-muted); font-weight: 600;">ISO 14064 Compliant</span>
+            </div>
+            <div class="esg-card" style="padding: 16px; text-align: center;">
+              <span style="font-size: 0.75rem; color: var(--color-text-muted); font-weight: 700; text-transform: uppercase;">Audit Dossiers</span>
+              <div style="font-size: 1.8rem; font-weight: 800; color: var(--color-text); margin: 4px 0;">3 Signed</div>
+              <span style="font-size: 0.75rem; color: #D97706; font-weight: 600;">CSRD &amp; TCFD Ready</span>
+            </div>
+          </div>
+
+          <!-- Main Two-Column Module -->
+          <div class="dash-grid-2">
+            <!-- Upload Dropzone -->
+            <div class="dash-chart-card" style="margin-bottom: 0;">
+              <div class="dash-card-header">
+                <h3 style="margin-bottom: 8px;">Operational Telemetry Ingestion</h3>
+                <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 16px;">
+                  Upload smart meter energy logs, utility receipts, or supplier Scope 3 surveys. Automatically parsed and matched to emission factor databases.
+                </p>
+              </div>
+
+              <div class="upload-dropzone" id="uploadDropzone">
+                <input type="file" id="operationalFileInput" style="display: none;" multiple accept=".csv,.xlsx,.json,.pdf">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" stroke-width="2" style="margin-bottom: 12px;">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <div style="font-weight: 700; font-size: 1rem; color: var(--color-primary);">
+                  Drag &amp; Drop CSV / Excel / Bills Here
+                </div>
+                <div style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 4px;">
+                  or click to browse local files (Auto-mapped to GHG Protocol Scope 1-3)
+                </div>
+              </div>
+
+              <!-- Uploaded Items Container -->
+              <div id="uploadedFilesList" style="margin-top: 16px;">
+                <div class="uploaded-file-item" style="padding: 12px 16px; background: var(--color-surface-subtle); border-radius: 8px; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between;">
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                    <div>
+                      <div style="font-weight: 700; font-size: 0.85rem; word-break: break-all;">Q3_Facility_SmartMeters_Consolidated.xlsx</div>
+                      <div style="font-size: 0.75rem; color: var(--color-text-muted);">1,840 KB • Processed 14 European Facilities</div>
+                    </div>
+                  </div>
+                  <span style="font-size: 0.8rem; font-weight: 700; color: #059669;">✓ Verified</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Compliance Reports List -->
+            <div class="dash-chart-card" style="margin-bottom: 0;">
+              <div class="dash-card-header">
+                <h3 style="margin-bottom: 8px;">Statutory Assurance Reports</h3>
+                <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 16px;">
+                  Audit-ready documents signed by Verdant ESG certified lead verifiers with cryptographic proof of provenance.
+                </p>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div class="report-item-card" style="padding: 14px 18px; background: var(--color-surface-subtle); border-radius: 8px; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between;">
+                  <div>
+                    <div style="font-weight: 700; font-size: 0.95rem; color: var(--color-primary);">EU CSRD Double Materiality Dossier FY25</div>
+                    <div style="font-size: 0.8rem; color: var(--color-text-muted);">ESRS 1 &amp; 2 • Digital XBRL Taxonomy Tagged</div>
+                  </div>
+                  <button class="btn btn-outline btn-sm" onclick="alert('Downloading CSRD Double Materiality Assurance Dossier (PDF/XBRL package)...');">
+                    Download PDF
+                  </button>
+                </div>
+
+                <div class="report-item-card" style="padding: 14px 18px; background: var(--color-surface-subtle); border-radius: 8px; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between;">
+                  <div>
+                    <div style="font-weight: 700; font-size: 0.95rem; color: var(--color-primary);">GHG Protocol Scope 1-3 Inventory Report</div>
+                    <div style="font-size: 0.8rem; color: var(--color-text-muted);">ISO 14064-3 Certified • Auditor Workpapers Included</div>
+                  </div>
+                  <button class="btn btn-outline btn-sm" onclick="alert('Downloading GHG Protocol Scope 1-3 Inventory Report...');">
+                    Download PDF
+                  </button>
+                </div>
+
+                <div class="report-item-card" style="padding: 14px 18px; background: var(--color-surface-subtle); border-radius: 8px; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between;">
+                  <div>
+                    <div style="font-weight: 700; font-size: 0.95rem; color: var(--color-primary);">TCFD &amp; ISSB Climate Financial Disclosure</div>
+                    <div style="font-size: 0.8rem; color: var(--color-text-muted);">1.5°C Stress-Test • Physical &amp; Transition Risk Matrix</div>
+                  </div>
+                  <button class="btn btn-outline btn-sm" onclick="alert('Downloading TCFD & ISSB Climate Risk Matrix...');">
+                    Download PDF
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ingestion Activity Ledger Table -->
+          <div class="dash-chart-card">
+            <h3 style="margin-bottom: 6px;">Recent Data Stream Activity &amp; Lineage Logs</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 16px;">
+              Direct telemetry feeds cryptographically hashed for external statutory assurance defense.
+            </p>
+
+            <div class="dash-table-wrapper">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Ingestion ID</th>
+                    <th>Source Type</th>
+                    <th>Data Perimeter</th>
+                    <th>Emissions Captured</th>
+                    <th>Audit Status</th>
+                    <th>Timestamp</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code style="color: var(--color-primary-light);">ING-2026-9481</code></td>
+                    <td>SCADA Smart Meters</td>
+                    <td>Frankfurt Foundry Plant #2</td>
+                    <td>1,240 tCO2e (Scope 1)</td>
+                    <td><span style="color: #10B981; font-weight: 700;">Verified (ISAE 3000)</span></td>
+                    <td>Today, 14:22 CET</td>
+                  </tr>
+                  <tr>
+                    <td><code style="color: var(--color-primary-light);">ING-2026-9480</code></td>
+                    <td>SAP S/4HANA GL Connector</td>
+                    <td>Munich &amp; Lyon Freight Spend</td>
+                    <td>412 tCO2e (Scope 3.4)</td>
+                    <td><span style="color: #10B981; font-weight: 700;">Verified (DEFRA 2024)</span></td>
+                    <td>Yesterday, 19:10 CET</td>
+                  </tr>
+                  <tr>
+                    <td><code style="color: var(--color-primary-light);">ING-2026-9479</code></td>
+                    <td>Supplier Intake Portal</td>
+                    <td>Tier-1 Castings Supply Chain</td>
+                    <td>2,810 tCO2e (Scope 3.1)</td>
+                    <td><span style="color: #F59E0B; font-weight: 700;">Under Review</span></td>
+                    <td>Oct 10, 2026</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

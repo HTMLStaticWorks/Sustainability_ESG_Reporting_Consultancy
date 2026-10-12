@@ -25,9 +25,13 @@
       });
 
       // Render charts once layout elements are visible
-      renderProgressChart('monthly');
-      renderBenchmarkChart();
-    }, 650);
+      if (document.getElementById('progressChartCanvas')) {
+        renderProgressChart('monthly');
+      }
+      if (document.getElementById('benchmarkChartCanvas')) {
+        renderBenchmarkChart();
+      }
+    }, 450);
   }
 
   /* ==========================================================================
@@ -339,6 +343,33 @@
   }
 
   /* ==========================================================================
+     7. API KEY COPY HELPER
+     ========================================================================== */
+  function initApiKeyCopy() {
+    const copyBtns = document.querySelectorAll('.js-copy-key-btn');
+    copyBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        const input = document.getElementById(targetId);
+        if (input) {
+          navigator.clipboard.writeText(input.value).then(() => {
+            const originalText = btn.textContent;
+            btn.textContent = 'Copied!';
+            btn.style.color = '#10B981';
+            setTimeout(() => {
+              btn.textContent = originalText;
+              btn.style.color = '';
+            }, 2000);
+          }).catch(() => {
+            input.select();
+            document.execCommand('copy');
+          });
+        }
+      });
+    });
+  }
+
+  /* ==========================================================================
      INITIALIZE DASHBOARD
      ========================================================================== */
   document.addEventListener('DOMContentLoaded', () => {
@@ -346,10 +377,15 @@
     initFileUpload();
     initDashboardSidebarToggle();
     initTimeframeToggle();
+    initApiKeyCopy();
 
     window.addEventListener('resize', () => {
-      renderProgressChart('monthly');
-      renderBenchmarkChart();
+      if (document.getElementById('progressChartCanvas')) {
+        renderProgressChart('monthly');
+      }
+      if (document.getElementById('benchmarkChartCanvas')) {
+        renderBenchmarkChart();
+      }
     });
   });
 

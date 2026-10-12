@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security &amp; API Keys — Verdant ESG Client Portal</title>
+  <meta name="description" content="API tokens, single sign-on, and multi-entity access parameters for Verdant ESG enterprise clients.">
+  
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    <!-- PERSISTENT SIDEBAR NAVIGATION -->
+    <aside class="dashboard-sidebar" aria-label="Dashboard Sidebar">
+      <div class="sidebar-header" style="padding: 18px 20px;">
+        <a href="index.html" class="navbar-brand" aria-label="Verdant ESG Home">
+          <svg viewBox="0 0 280 64" width="170" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="dbSbGlobeGradSet" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#064E3B"/>
+                <stop offset="100%" stop-color="#022C22"/>
+              </linearGradient>
+              <linearGradient id="dbSbLeaf1Set" x1="12" y1="8" x2="32" y2="36" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#34D399"/>
+                <stop offset="50%" stop-color="#10B981"/>
+                <stop offset="100%" stop-color="#059669"/>
+              </linearGradient>
+              <linearGradient id="dbSbLeaf2Set" x1="22" y1="8" x2="22" y2="36" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#6EE7B7"/>
+                <stop offset="100%" stop-color="#047857"/>
+              </linearGradient>
+              <linearGradient id="dbSbOrbitGradSet" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#10B981"/>
+                <stop offset="50%" stop-color="#06B6D4"/>
+                <stop offset="100%" stop-color="#F59E0B"/>
+              </linearGradient>
+            </defs>
+            <g transform="translate(10, 10)">
+              <circle cx="22" cy="22" r="21" stroke="url(#dbSbOrbitGradSet)" stroke-width="1.5" stroke-dasharray="4 2 1 2" opacity="0.9"/>
+              <ellipse cx="22" cy="22" rx="21" ry="8" stroke="#10B981" stroke-width="1" stroke-dasharray="2 3" transform="rotate(-25 22 22)" opacity="0.6"/>
+              <circle cx="22" cy="22" r="18" fill="url(#dbSbGlobeGradSet)" stroke="#10B981" stroke-width="1"/>
+              <path d="M 4 22 A 18 7 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+              <path d="M 4 22 A 18 14 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.3"/>
+              <path d="M 22 4 A 7 18 0 0 0 22 40" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+              <path d="M 22 9 C 14 15 13 25 22 34 C 20 28 20 18 22 9 Z" fill="url(#dbSbLeaf1Set)"/>
+              <path d="M 22 9 C 30 15 31 25 22 34 C 24 28 24 18 22 9 Z" fill="url(#dbSbLeaf2Set)"/>
+              <path d="M 22 10 V 33" stroke="#ECFDF5" stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="39" cy="14" r="2.5" fill="#F59E0B"/>
+              <circle cx="39" cy="14" r="1" fill="#FFFFFF"/>
+              <circle cx="5" cy="30" r="1.8" fill="#06B6D4"/>
+              <circle cx="22" cy="4" r="1.5" fill="#10B981"/>
+            </g>
+            <text x="65" y="30" font-family="'Outfit', 'Inter', sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" letter-spacing="0.02em">VERDANT<tspan fill="#10B981">ESG</tspan></text>
+            <text x="66" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" fill="#64748B" letter-spacing="0.18em">SUSTAINABILITY &amp; AUDIT</text>
+          </svg>
+        </a>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="dashboard.html" class="sidebar-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          Overview &amp; Telemetry
+        </a>
+        <a href="dashboard-reporting.html" class="sidebar-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+          Data Ingestion &amp; Reports
+        </a>
+        <a href="dashboard-benchmarks.html" class="sidebar-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          Industry Benchmarks
+        </a>
+        <a href="dashboard-billing.html" class="sidebar-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          Billing &amp; Retainer
+        </a>
+        <a href="dashboard-settings.html" class="sidebar-item active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          Security &amp; API Keys
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <button class="utility-btn js-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme" style="width: 32px; height: 32px; border-color: rgba(255,255,255,0.15); color: #FFFFFF;">
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </button>
+          <button class="utility-btn js-rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL Layout" style="width: 32px; height: 32px; font-weight: 800; font-size: 0.7rem; border-color: rgba(255,255,255,0.15); color: #FFFFFF;">
+            LTR
+          </button>
+        </div>
+
+        <div style="font-size: 0.75rem; color: #64748B; margin-bottom: 8px;">AUDIT ENGAGEMENT TIER</div>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: #34D399;">Enterprise Retainer</span>
+          <span style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.2); color: #10B981; padding: 2px 6px; border-radius: 4px;">ACTIVE</span>
+        </div>
+        <a href="login.html" class="sidebar-item" style="padding: 8px 0; color: #EF4444;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+          Sign Out of Portal
+        </a>
+      </div>
+    </aside>
+
+    <!-- DASHBOARD MAIN CONTAINER -->
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="dash-topbar-brand" style="display: flex; align-items: center; gap: 14px;">
+          <button id="dashSidebarToggle" class="utility-btn" aria-label="Toggle Sidebar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <a href="index.html" class="navbar-brand" aria-label="Verdant ESG Home">
+            <svg viewBox="0 0 280 64" width="180" height="42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="dbTopGlobeGradSet" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#064E3B"/>
+                  <stop offset="100%" stop-color="#022C22"/>
+                </linearGradient>
+                <linearGradient id="dbTopLeaf1Set" x1="12" y1="8" x2="32" y2="36" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#34D399"/>
+                  <stop offset="50%" stop-color="#10B981"/>
+                  <stop offset="100%" stop-color="#059669"/>
+                </linearGradient>
+                <linearGradient id="dbTopLeaf2Set" x1="22" y1="8" x2="22" y2="36" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#6EE7B7"/>
+                  <stop offset="100%" stop-color="#047857"/>
+                </linearGradient>
+                <linearGradient id="dbTopOrbitGradSet" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#10B981"/>
+                  <stop offset="50%" stop-color="#06B6D4"/>
+                  <stop offset="100%" stop-color="#F59E0B"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(10, 10)">
+                <circle cx="22" cy="22" r="21" stroke="url(#dbTopOrbitGradSet)" stroke-width="1.5" stroke-dasharray="4 2 1 2" opacity="0.9"/>
+                <ellipse cx="22" cy="22" rx="21" ry="8" stroke="#10B981" stroke-width="1" stroke-dasharray="2 3" transform="rotate(-25 22 22)" opacity="0.6"/>
+                <circle cx="22" cy="22" r="18" fill="url(#dbTopGlobeGradSet)" stroke="#10B981" stroke-width="1"/>
+                <path d="M 4 22 A 18 7 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+                <path d="M 4 22 A 18 14 0 0 0 40 22" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.3"/>
+                <path d="M 22 4 A 7 18 0 0 0 22 40" fill="none" stroke="#10B981" stroke-width="0.75" opacity="0.4"/>
+                <path d="M 22 9 C 14 15 13 25 22 34 C 20 28 20 18 22 9 Z" fill="url(#dbTopLeaf1Set)"/>
+                <path d="M 22 9 C 30 15 31 25 22 34 C 24 28 24 18 22 9 Z" fill="url(#dbTopLeaf2Set)"/>
+                <path d="M 22 10 V 33" stroke="#ECFDF5" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="39" cy="14" r="2.5" fill="#F59E0B"/>
+                <circle cx="39" cy="14" r="1" fill="#FFFFFF"/>
+                <circle cx="5" cy="30" r="1.8" fill="#06B6D4"/>
+                <circle cx="22" cy="4" r="1.5" fill="#10B981"/>
+              </g>
+              <text x="65" y="30" font-family="'Outfit', 'Inter', sans-serif" font-size="20" font-weight="800" fill="currentColor" letter-spacing="0.02em" class="brand-text-main">VERDANT<tspan fill="#10B981">ESG</tspan></text>
+              <text x="66" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" fill="#64748B" letter-spacing="0.18em">SUSTAINABILITY &amp; AUDIT</text>
+            </svg>
+          </a>
+        </div>
+
+        <div class="dash-topbar-actions" style="display: flex; align-items: center; gap: 14px;">
+          <div class="dash-user-profile" style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--color-primary); color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0; border: 2px solid var(--color-primary-light);">
+              MV
+            </div>
+            <div class="dash-user-info">
+              <div style="font-size: 0.85rem; font-weight: 700; white-space: nowrap;">Marcus Vance</div>
+              <div style="font-size: 0.75rem; color: var(--color-text-muted); white-space: nowrap;">CSO / Admin</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+        <!-- Skeleton Loader -->
+        <div class="skeleton-wrapper">
+          <div class="dash-grid-2" style="margin-bottom: 24px;">
+            <div class="skeleton" style="height: 240px;"></div>
+            <div class="skeleton" style="height: 240px;"></div>
+          </div>
+          <div class="skeleton" style="height: 260px;"></div>
+        </div>
+
+        <!-- Real Loaded Content: Exclusively Dedicated to Settings & Security -->
+        <div class="real-content" style="display: none;">
+          <!-- Dedicated Page Header -->
+          <div class="dash-page-header">
+            <div>
+              <div class="dash-breadcrumb">
+                <a href="dashboard.html">Portal</a>
+                <span class="dash-breadcrumb-sep">/</span>
+                <span style="color: var(--color-text);">Security &amp; API Keys</span>
+              </div>
+              <h2>Security, SSO &amp; API Integration</h2>
+              <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 0;">
+                Generate programmatic ingest tokens, manage Okta/Azure SSO connections, and regulate multi-entity team roles.
+              </p>
+            </div>
+            <div class="dash-header-actions">
+              <button class="btn btn-primary btn-sm" onclick="alert('Generating new production REST API ingest token...');">
+                + Generate New Token
+              </button>
+            </div>
+          </div>
+
+          <!-- Top Grid: API Tokens + SSO Configuration -->
+          <div class="dash-grid-settings">
+            <!-- API Tokens Card -->
+            <div class="dash-chart-card" style="margin-bottom: 0;">
+              <h3 style="margin-bottom: 6px;">Programmatic API Ingestion Keys</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 16px;">
+                Authenticate automated ERP jobs (SAP, Oracle NetSuite) sending smart meter or spend telemetry directly into our calculation engine.
+              </p>
+
+              <div style="margin-bottom: 16px;">
+                <label style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--color-text); margin-bottom: 6px;">
+                  Production Ingest Secret Key:
+                </label>
+                <div class="token-copy-box">
+                  <input type="text" id="prodApiKey" class="token-code" readonly value="vesg_live_9f81a742c30b91d84e207a">
+                  <button class="btn btn-outline btn-sm js-copy-key-btn" data-target="prodApiKey" style="padding: 4px 10px; font-size: 0.75rem;">
+                    Copy
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <label style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--color-text); margin-bottom: 6px;">
+                  Big-4 External Auditor Read-Only Sandbox Key:
+                </label>
+                <div class="token-copy-box">
+                  <input type="text" id="auditorApiKey" class="token-code" readonly value="vesg_audit_ro_348be8217f09da92">
+                  <button class="btn btn-outline btn-sm js-copy-key-btn" data-target="auditorApiKey" style="padding: 4px 10px; font-size: 0.75rem;">
+                    Copy
+                  </button>
+                </div>
+              </div>
+
+              <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--color-border); font-size: 0.8rem; color: var(--color-text-muted);">
+                API Endpoint: <code>https://api.verdantesg.com/v2/telemetry/ingest</code>
+              </div>
+            </div>
+
+            <!-- SSO Status Card -->
+            <div class="dash-chart-card" style="margin-bottom: 0;">
+              <h3 style="margin-bottom: 6px;">Enterprise Single Sign-On (SSO)</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 16px;">
+                Corporate identity provider synchronization and multi-factor compliance.
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div class="dash-sso-item" style="padding: 12px 14px; background: var(--color-surface-subtle); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+                  <div>
+                    <strong style="display: block; font-size: 0.88rem; color: var(--color-text);">SAML 2.0 / Okta Integration</strong>
+                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Domain: trans-euro.com</span>
+                  </div>
+                  <span style="background: rgba(16, 185, 129, 0.15); color: #059669; font-weight: 700; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">Active</span>
+                </div>
+
+                <div class="dash-sso-item" style="padding: 12px 14px; background: var(--color-surface-subtle); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+                  <div>
+                    <strong style="display: block; font-size: 0.88rem; color: var(--color-text);">Enforced 2FA Hardware Keys</strong>
+                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">FIDO2 / WebAuthn protocol</span>
+                  </div>
+                  <span style="background: rgba(16, 185, 129, 0.15); color: #059669; font-weight: 700; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">Enforced</span>
+                </div>
+
+                <div class="dash-sso-item" style="padding: 12px 14px; background: var(--color-surface-subtle); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+                  <div>
+                    <strong style="display: block; font-size: 0.88rem; color: var(--color-text);">Inactivity Session Timeout</strong>
+                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Automatic lock for security</span>
+                  </div>
+                  <span style="font-weight: 700; font-size: 0.8rem; color: var(--color-text);">30 Minutes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entity Access & Team Governance Table -->
+          <div class="dash-chart-card">
+            <h3 style="margin-bottom: 6px;">Authorized Corporate Accounts &amp; Audit Roles</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 16px;">
+              Role-Based Access Control (RBAC) governing data upload, review, and statutory sign-off.
+            </p>
+
+            <div class="dash-table-wrapper">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>User &amp; Organization</th>
+                    <th>Email Address</th>
+                    <th>Portal Role</th>
+                    <th>Perimeter Scope</th>
+                    <th>2FA Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Marcus Vance</strong></td>
+                    <td>m.vance@trans-euro.com</td>
+                    <td><span style="color: var(--color-primary); font-weight: 700;">CSO / Admin</span></td>
+                    <td>Consolidated (All 14 Plants)</td>
+                    <td><span style="color: #059669; font-weight: 700;">Active (YubiKey)</span></td>
+                    <td><button class="btn btn-outline btn-sm" onclick="alert('Editing permissions for Marcus Vance...');">Manage</button></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Dr. Klaus Hoffmann</strong></td>
+                    <td>k.hoffmann@verdantesg.com</td>
+                    <td><span style="color: #3B82F6; font-weight: 700;">Lead Statutory Auditor</span></td>
+                    <td>Audit Verification Dossiers</td>
+                    <td><span style="color: #059669; font-weight: 700;">Active (FIDO2)</span></td>
+                    <td><button class="btn btn-outline btn-sm" onclick="alert('Viewing Auditor authorization dossier...');">Manage</button></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Elena Rostova</strong></td>
+                    <td>e.rostova@trans-euro.com</td>
+                    <td><span style="color: #F59E0B; font-weight: 700;">Finance Director</span></td>
+                    <td>Billing &amp; General Ledger</td>
+                    <td><span style="color: #059669; font-weight: 700;">Active (App)</span></td>
+                    <td><button class="btn btn-outline btn-sm" onclick="alert('Editing permissions for Elena Rostova...');">Manage</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

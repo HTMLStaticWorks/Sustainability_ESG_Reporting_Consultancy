@@ -479,13 +479,18 @@
     const dirBtn = document.getElementById('hubMapDirBtn');
     const overlayTitle = document.getElementById('mapOverlayTitle');
     const badge = document.getElementById('hubTagBadge');
+    const hubTriggerLinks = document.querySelectorAll('.js-hub-view-map');
 
     if (!tabs.length || !iframe) return;
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
         tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
 
         const name = tab.getAttribute('data-name');
         const addr = tab.getAttribute('data-address');
@@ -494,8 +499,14 @@
 
         if (title) title.textContent = name;
         if (address) address.textContent = addr;
-        if (email) email.textContent = em;
-        if (phone) phone.textContent = ph;
+        if (email) {
+          email.textContent = em;
+          if (email.tagName === 'A') email.href = `mailto:${em}`;
+        }
+        if (phone) {
+          phone.textContent = ph;
+          if (phone.tagName === 'A') phone.href = `tel:${ph.replace(/\s+/g, '')}`;
+        }
         if (overlayTitle) overlayTitle.textContent = `${name.split(',')[0]} Node: Active Telemetry`;
         if (badge) badge.textContent = name.includes('HQ') ? 'Global Headquarters' : 'Statutory Practice Hub';
 
@@ -508,6 +519,134 @@
         }
       });
     });
+
+    hubTriggerLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const targetIndex = parseInt(link.getAttribute('data-hub-target') || '0', 10);
+        if (tabs[targetIndex]) {
+          tabs[targetIndex].click();
+        }
+      });
+    });
+  }
+
+  /* ==========================================================================
+     WORKFLOW STEPPER CONTROLLER (SERVICES PAGE)
+     ========================================================================== */
+  function initWorkflowStepper() {
+    const steps = document.querySelectorAll('.workflow-step-card');
+    const displayTitle = document.getElementById('workflowPhaseTitle');
+    const displayDesc = document.getElementById('workflowPhaseDesc');
+    const displayDeliverable = document.getElementById('workflowPhaseDeliverable');
+
+    if (!steps.length) return;
+
+    steps.forEach(step => {
+      step.addEventListener('click', () => {
+        steps.forEach(s => s.classList.remove('active'));
+        step.classList.add('active');
+
+        const title = step.getAttribute('data-title');
+        const desc = step.getAttribute('data-desc');
+        const deliverable = step.getAttribute('data-deliverable');
+
+        if (displayTitle && title) displayTitle.textContent = title;
+        if (displayDesc && desc) displayDesc.textContent = desc;
+        if (displayDeliverable && deliverable) displayDeliverable.textContent = deliverable;
+      });
+    });
+  }
+
+  /* ==========================================================================
+     LIVE OFFICE CLOCKS CONTROLLER (CONTACT PAGE)
+     ========================================================================== */
+  function initLiveClocks() {
+    const clocks = document.querySelectorAll('[data-timezone]');
+    if (!clocks.length) return;
+
+    function updateClocks() {
+      const now = new Date();
+      clocks.forEach(clock => {
+        const tz = clock.getAttribute('data-timezone');
+        try {
+          const timeStr = now.toLocaleTimeString('en-GB', {
+            timeZone: tz,
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+          });
+          clock.textContent = timeStr;
+        } catch (e) {
+          // fallback
+        }
+      });
+    }
+
+    updateClocks();
+    setInterval(updateClocks, 1000);
+  }
+
+  /* ==========================================================================
+     PROCUREMENT FAQ ACCORDION (CONTACT PAGE)
+     ========================================================================== */
+  function initProcurementFaq() {
+    const faqTriggers = document.querySelectorAll('.faq-trigger-btn');
+    faqTriggers.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const panel = btn.nextElementSibling;
+        const icon = btn.querySelector('.faq-icon');
+        const isOpen = panel && panel.style.display === 'block';
+
+        faqTriggers.forEach(otherBtn => {
+          const otherPanel = otherBtn.nextElementSibling;
+          const otherIcon = otherBtn.querySelector('.faq-icon');
+          if (otherPanel && otherPanel !== panel) {
+            otherPanel.style.display = 'none';
+            if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+          }
+        });
+
+        if (panel) {
+          if (isOpen) {
+            panel.style.display = 'none';
+            if (icon) icon.style.transform = 'rotate(0deg)';
+          } else {
+            panel.style.display = 'block';
+            if (icon) icon.style.transform = 'rotate(180deg)';
+          }
+        }
+      });
+    });
+  }
+
+  /* ==========================================================================
+     SERVICES STICKY NAV SCROLL SPY
+     ========================================================================== */
+  function initServicesNavSpy() {
+    const navItems = document.querySelectorAll('.services-nav-item');
+    if (!navItems.length) return;
+
+    window.addEventListener('scroll', () => {
+      let currentId = '';
+      const sections = document.querySelectorAll('.service-deepdive-card');
+      sections.forEach(sec => {
+        const top = sec.offsetTop - 160;
+        if (window.scrollY >= top) {
+          currentId = sec.getAttribute('id');
+        }
+      });
+
+      if (currentId) {
+        navItems.forEach(item => {
+          if (item.getAttribute('href') === `#${currentId}`) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+      }
+    }, { passive: true });
   }
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -525,6 +664,11 @@
     initAccordions();
     initFormValidation();
     initLoginForm();
+    initWorkflowStepper();
+    initLiveClocks();
+    initProcurementFaq();
+    initServicesNavSpy();
   });
 
 })();
+
